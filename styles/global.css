@@ -1,0 +1,140 @@
+/* RESET GERAL */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --snitap-sun: #FFCD1E;
+    --background: #f7d9f2;
+    --ff-base: "Fira Sans", sans-serif;
+    --text-xl: 4rem;
+    --text-lg: 2.5rem;
+}
+
+body {
+    background-color: var(--background);
+    font-family: var(--ff-base);
+    overflow-x: hidden; /* Remove barra branca lateral */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR E HERO */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.hero {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-card {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    gap: 50px;
+}
+
+/* SEÇÃO SOBRE E PROJETOS */
+.container-secoes {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaço entre as seções Sobre e Projetos */
+}
+
+/* AJUSTE DE ESPAÇO: Removemos o vácuo entre título e descrição */
+#projetos .about {
+    display: flex;
+    flex-direction: column;
+    gap: 0px !important; 
+}
+
+.about h1 {
+    font-size: var(--text-lg);
+    margin-bottom: 0px; 
+}
+
+.about-description {
+    margin-bottom: 5px !important; 
+    display: block;
+}
+
+/* CARROSSEL */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    gap: 5px;
+    margin-top: -15px; /* Puxa o carrossel para cima para colar no texto */
+}
+
+.cards-container-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 5px; /* Respiro interno reduzido */
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.cards-container-horizontal::-webkit-scrollbar {
+    display: none;
+}
+
+/* CARD INDIVIDUAL */
+.card-projeto {
+    position: relative;
+    min-width: 300px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background-color: #111827;
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+}
+
+/* ÂNCORA ANTI-SALTO */
+.scroll-anchor {
+    position: absolute;
+    top: -60vh; /* "Engana" o navegador para não pular a página */
+    left: 0;
+}
+
+.card-projeto img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* SETAS ÚNICAS VIA CSS */
+.arrow-link {
+    text-decoration: none;
+    color: var(--snitap-sun);
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* Garante que a seta apareça apenas uma vez */
+.arrow-left::before { content: '‹'; }
+.arrow-right::before { content: '›'; }
