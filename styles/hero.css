@@ -1,0 +1,451 @@
+.hero {
+    width: 100%;
+    /* Remova o min-height: 100vh; */
+    display: flex;
+    flex-direction: column; /* Faz o conteúdo fluir de cima para baixo */
+    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo no topo do container */
+    background-color: var(--background);
+    padding: 0 2rem;
+    margin-top: 0; /* Garante que não haja margem externa */
+}
+
+.hero-card {
+    /* O segredo do tamanho: 90% da largura e altura fixa alta */
+    width: 100%;
+    max-width: 1200px; 
+    height: 550px; 
+    
+    background-color: #111827; /* Cor escura do card para destacar seus botões */
+    border-radius: 24px;
+    display: flex;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hero-content {
+    flex: 1.2; /* Dá mais espaço para o texto */
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+}
+
+.intro-text {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.hero-content h1 {
+    font-size: 5rem; /* Nome gigante */
+    color: white;
+    line-height: 1;
+    margin: 1rem 0 2rem 0;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.about-description {
+    font-size: 1.25rem;
+    color: #333536;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* Seus botões com suas cores originais */
+.buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.buttons > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px; /* Botões maiores */
+    min-width: 220px;
+    border-radius: 8px; /* Quadrado arredondado como o dele */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.buttons > a.buy {
+    border: 2px solid #374151;
+    background-color: transparent;
+    color: white;
+}
+
+.buttons > a.play {
+    background-color: var(--snitap-sun); /* Amarelo da sua var */
+    color: #000;
+    
+}
+
+.buttons > a:hover {
+    transform: scale(1.05);
+}
+.buttons > a.cv {
+    background-color: var(--snitap-sun);
+     /* Amarelo da sua var */
+    color: #000;
+}
+/* Área da Foto */
+.hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-image img {
+    height: 115%; /* Faz a foto "pular" para fora do card igual ao Diego */
+    position: absolute;
+    bottom: 0;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+/* Isso garante que o Header se mova em relação à página, não ao card */
+body {
+    position: relative;
+}
+
+/* Reduzi o espaço para os links subirem mais */
+/* 1. Removemos espaços desnecessários do Header */
+/* 1. Faz os botões descerem dentro do próprio header */
+.main-header {
+    width: 100%;
+    padding-top: 80px;    /* Aumente este valor para descer os botões de Início/Sobre */
+    padding-bottom: 20px; /* Espaço entre os botões e o início do quadrado azul */
+    position: relative;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 50px;
+}
+
+/* 2. Puxa o quadrado azul para cima para "colar" nos botões */
+.hero {
+    padding-top: 0;
+    margin-top: -30px;    /* Aumentamos o valor negativo para o card subir mais */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-card {
+    margin-top: 0; 
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #3b82f6; /* Azul dos links do Diego Souza */
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    filter: brightness(1.2);
+}
+
+
+
+
+/* Estilo do botão amarelo Contato */
+.btn-contato-nav {
+    background-color: var(--snitap-sun); /* Seu amarelo */
+    color: #000 !important;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 100px rgba(0,0,0,0.1);
+}
+.about {
+    flex: 1.2; /* Dá mais espaço para o texto */
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+}
+
+.about {
+    color: #313c4d;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.about h1 {
+    font-size: 5rem; /* Nome gigante igual ao do Diego */
+    color: rgb(49, 40, 61);
+    line-height: 1;
+    margin: 1rem 0 2rem 0;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 500px;
+    line-height: 1.6;
+}
+.container-secoes {
+    display: flex;
+    flex-direction: row;      /* Garante que fiquem em linha */
+    justify-content: center;  /* Centraliza o conjunto na tela */
+    gap: 2rem;                /* Espaço entre o Sobre Mim e o Projetos */
+    width: 100%;
+    max-width: 1400px;        /* Ajuste conforme a largura do seu card superior */
+    margin: 0 auto;           /* Centraliza o container */
+    padding: 2rem;
+}
+
+/* Garante que cada bloco ocupe o mesmo espaço e não quebre a linha */
+.bloco-info {
+    flex: 1; 
+    min-width: 300px;         /* Impede que fiquem espremidos demais */
+}
+
+/* Ajuste do h1 para não ficar gigante demais um ao lado do outro */
+.about h1 {
+    font-size: 4rem;          /* Diminuí um pouco de 5rem para 4rem para caber melhor lado a lado */
+    white-space: nowrap;      /* Evita que o título quebre em duas linhas */
+}
+.rodape-completo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 24px;
+    gap: 1.5rem;
+    padding: 4rem 0;
+    background-color: #111827; /* Cor escura igual ao seu card */
+    width: 100%;
+    max-width: 1200px
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Círculo suave */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-btn img {
+    width: 25px;
+    height: 25px;
+    /* Isso deixa os ícones brancos para combinarem entre si */
+    filter: brightness(0) invert(1); 
+}
+
+/* Efeito de hover (passar o mouse) */
+.social-btn:hover {
+    background-color: var(--snitap-sun); /* Fica amarelo */
+    border-color: var(--snitap-sun);
+    transform: translateY(-5px); /* Sobe um pouquinho */
+}
+
+.social-btn:hover img {
+    filter: none; /* Volta a cor original no hover */
+}
+
+.copyright {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-family: var(--ff-base);
+}
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Círculo discreto */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-btn img {
+    width: 24px; /* Tamanho do ícone dentro do círculo */
+    height: 24px;
+    filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+}
+
+/* Efeito ao passar o mouse */
+.social-btn:hover {
+    background-color: var(--snitap-sun); /* Fica amarelo ao passar o mouse */
+    border-color: var(--snitap-sun);
+    transform: translateY(-3px);
+}
+
+.social-btn:hover img {
+    filter: none; /* Volta a cor original do ícone no hover */
+}
+
+.copyright {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* --- ANIMAÇÕES DE ENTRADA --- */
+
+.animar-esquerda {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1.2s ease-in-out; /* O 'all' garante que opacidade e posição animem juntas */
+}
+
+.animar-direita {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.2s ease-in-out;
+}
+
+/* Quando o script acima adiciona '.show', o CSS aplica estas mudanças: */
+.animar-esquerda.show, 
+.animar-direita.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.tech-slider {
+    width: 100%;
+    overflow: hidden; /* Esconde o que sai da tela */
+    background: transparent;
+    padding: 2rem 0;
+    display: flex;
+}
+
+.tech-track {
+    display: flex;
+    width: calc(150px * 10); /* Ajuste: (largura da imagem + gap) * total de imagens */
+    animation: scroll-infinito 20s linear infinite;
+    gap: 80px; /* Espaço entre os ícones */
+    align-items: center;
+}
+
+.tech-track img {
+    height: 50px; /* Tamanho dos ícones */
+    width: auto;
+    /* Deixa os ícones clarinhos e discretos como no site do Diego */
+    filter: grayscale(1) brightness(1.5); 
+    opacity: 0.3;
+    transition: 0.3s;
+}
+
+/* Opcional: Quando passar o mouse, o ícone ganha cor e destaque */
+.tech-track img:hover {
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* A Mágica do Movimento Infinito */
+@keyframes scroll-infinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente metade da largura total da track */
+        transform: translateX(calc(-150px * 5 - 400px)); 
+    }
+}
+.cards-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.card-projeto {
+  background-color: #111827;
+  border-radius: 16px;
+  padding: 24px;
+  width: 300px;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-projeto h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.card-projeto p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.btn-projeto {
+  align-self: flex-start;
+  background-color: var(--snitap-sun);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-projeto:hover {
+  transform: scale(1.05);
+}
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.cards-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  color: var(--snitap-sun);
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+.arrow:hover {
+  color: white;
+}
